@@ -1,8 +1,9 @@
-body {
-    padding: 2rem;
+
+
+main {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
+    justify-content: center;
 
 }
 
@@ -23,8 +24,12 @@ form {
     }
 
 #highlights{
+    padding: 0,.5rem;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
+    margin-top: 3rem;
+    border-radius: 2rem;
 }
 
 h1 {
@@ -47,12 +52,37 @@ h5 {
     align-items: center;
 }
 
+.container-fluid{
+    display: none;
+    flex-direction: column;
+}
+
 footer{
     padding: 2rem 0rem 1rem 0rem;
     text-align: center;
 }
 
+.card-group{
+    padding: 1rem;
+    background-color: whitesmoke;
+}
 
+.card-body  {
+    border-radius: 3rem;
+}
+
+.card-img-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+#current-temperature-text {
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 1.5rem;
+}
 
 
 /* for tablet & desktop  */
@@ -60,6 +90,18 @@ footer{
     body {
         padding: 1.5rem;
         background-color: whitesmoke;
+    }
+
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        display: flex;
+
+        justify-content: center;
+
     }
 
     #highlights {
@@ -71,7 +113,9 @@ footer{
     }
 
     .container-fluid{
-        display: flex;
+        display: none;
+        /* display: flex; */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         text-align: center;
