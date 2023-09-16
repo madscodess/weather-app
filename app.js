@@ -13,65 +13,6 @@ let sunset = document.querySelector('#sunset');
 const errorState = document.querySelector('#error-state');
 let image = document.querySelector('div#current-temperature-text img');
 
-//const highlightsDiv = document.getElementById('highlights');
-
-//current weather in Manchester as homepage 
-// const inputCity = 'manchester';
-// console.log(inputCity);
-
-  //set API key & url 
-// let apiKey = "bb9c326b337a705c684adf14dac0abf6";
-// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=metric&appid=${apiKey}`;
-
-
-// window.addEventListener("load", function(e){
-//       e.preventDefault()
-//     const getManchesterWeather = async (errors) => {
-//         try {
-//             const response = await axios.get(`${apiUrl}`);
-//             const manchesterData = response.data;
-//             //console.log(cityData);
-//             console.log(`GET: Here's the list of weather in ${inputCity}`, manchesterData);
-     
-
-//              //current temperature
-//             //change numbers to two digits 
-//             let currentTemp = String(manchesterData.main.temp).substring(0, 2);
-//             console.log(currentTemp);
-//             current.append(`${currentTemp}°C`);
-
-//             //humidity percentage 
-//             //change numbers to two digits 
-//             humidity.append(`${(manchesterData.main.humidity)}%`); 
-//             console.log(humidity);
-
-//             //max temperature
-//             //change numbers to one digit 
-//             let maxTemp = String(manchesterData.main.temp_max).substring(0, 2);
-//             console.log(Number(maxTemp));
-//             maxTempDiv.append(`${maxTemp}°C`);
-       
-//             //Min temperature
-//             //change numbers to one digit 
-//             let minTemp = String(manchesterData.main.temp_min).substring(0, 2);
-//             console.log(Number(minTemp));
-//             minTempDiv.append(`${minTemp}°C`);
-
-//             //sunrise 
-        
-//             sunrise.append(manchesterData.sys.sunrise);
-//             sunset.append(manchesterData.sys.sunset);
-//         }
-//         catch (e) {
-//                 console.log(errors);
-//         }
-//     }
-//         return getManchesterWeather();
-// });
-
-  
-
-
 //to update via the user input
 searchButton.addEventListener("click", function(e){
   e.preventDefault()
@@ -83,23 +24,17 @@ searchButton.addEventListener("click", function(e){
   //display containers
   weatherContainer.style.display = "flex";
   highlights.style.display = "flex";
- 
-
+  
 //get data using axios request 
 const getCityWeather = async (errors) => {
     try{
         const response = await axios.get(`${apiUrl}`);
         const cityData = response.data;
         console.log(`GET: Here's the list of weather in ${inputCity}`, cityData);
-       
-        //error code
-        if (cityData === '404') {
-            console.log("error code");
-            errorState.style.display = 'flex';
-            errorState.classList.add('fadeIn');
-            return;
-        }
+        console.log(cityData.cod);
 
+
+function displayWeather(){
         //update image
         let icon = cityData.weather[0].icon;
         image.src = `/icons/${icon}.png`;
@@ -122,15 +57,25 @@ const getCityWeather = async (errors) => {
         //change numbers to one digit 
         let minTemp = String(cityData.main.temp_min).substring(0, 2);
         minTempDiv.innerText = `${minTemp}°C`;
+    }
+    displayWeather();
 
+    function errorCode(){
+        if (cityData.cod === '404') {
+            console.log(cityData.cod);
+            console.log("error code");
+            return;
+        }
     }
-    catch (e) {
-            console.log(errors);
-    }
-    
+    errorCode();
+
 }
+catch (e) {
+    console.log(cityData.cod);
+        console.log(errors);
 
-return getCityWeather();
+} }
+
+getCityWeather();
 
 });
-
