@@ -21,9 +21,10 @@ searchButton.addEventListener("click", function(e){
   let apiKey = "bb9c326b337a705c684adf14dac0abf6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=metric&appid=${apiKey}`;
   
-  //display containers
+  //CSS containers
   weatherContainer.style.display = "flex";
   highlights.style.display = "flex";
+  errorState.style.display = "none";
   
 //get data using axios request 
 const getCityWeather = async (errors) => {
@@ -60,19 +61,13 @@ function displayWeather(){
     }
     displayWeather();
 
-    function errorCode(){
-        if (cityData.cod === '404') {
-            console.log(cityData.cod);
-            console.log("error code");
-            return;
-        }
-    }
-    errorCode();
-
 }
 catch (e) {
+    //error container
         console.log(errors);
-
+        errorState.style.display = "flex";
+        weatherContainer.style.display = "none";
+        highlights.style.display = "none";
 } }
 
 getCityWeather();
