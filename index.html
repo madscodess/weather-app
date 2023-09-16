@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet Link -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome Icons Link -->
+   <script src="https://kit.fontawesome.com/6752cb25eb.js" crossorigin="anonymous"></script>
     <title>Weather App - Vanilla JS</title>
 </head>
 <body>
@@ -12,22 +16,27 @@
 <main>
   <h1>Weather Search</h1>
     <!-- Search  -->
-    <form id = "search"> 
+    <form id="search"> 
     <div class="input-group mb-3">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search" aria-label="city name" aria-describedby="basic-addon2">
+      <i class="fa-solid fa-location-dot fa-lg"></i>
+        <input type="text" id="searchInput" class="form-control" placeholder="Enter a city" aria-label="city name" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button id="searchButton" class="btn btn-outline-secondary" type="button">Search</button>
         </div>
       </div>
     </form>
 
+    <div id="error-state">
+      <p>Error, city not found</p>
+      <img src="/images/404.png">
+    </div>
+
 <!-- Weather right now  -->
-<div class="container-fluid">
 <div id="current-temperature-text">
    <!-- Weather right now  -->
     <p id="current-text">Temperature in : </p>
+    <img src="" alt="weather icon">
     <h2 id="currentTemperature"> </h2>
-    <img class="card-img-top" src="..." alt="Card image cap">
 </div>
 
 <!-- highlights section -->
@@ -38,7 +47,7 @@
         <div class="card-group">
             <!-- Humidity Temperature -->
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <i class="fa-solid fa-water fa-lg"></i>
               <div class="card-body">
                 <h5 class="card-title">HUMIDITY</h5>
                 <p id="humidity"> </p>
@@ -47,7 +56,7 @@
 
             <!-- Maximum Temperature -->
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <i class="fa-solid fa-temperature-high fa-lg"></i>
               <div class="card-body">
                 <h5 class="card-title">MAX TEMP</h5>
                 <p id="max-temperature"> </p>
@@ -56,81 +65,23 @@
 
             <!--Minimum Temperature -->
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <i class="fa-solid fa-temperature-low fa-lg"></i>
               <div class="card-body">
                 <h5 class="card-title">MIN TEMP</h5>
                 <p id="min-temperature"> </p>
               </div>
             </div>
 
-            <!-- Sunrise & Sunset -->
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">SUNRISE / SUNSET</h5>
-                  <p id="sunrise">  </p>
-                  <p id="sunset">  </p>
-                </div>
-              </div>
           </div>
         </div>  
-    </div>
-    </div>  
+    </div> 
 </div>
-
-
-
-<!-- Next 5 days weather 
-<div id="5DayView">
-    <div class="card-group">
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-
-    </div> -->
 
 </main>
 
 <footer>
-Created by madscodes
+Created by madscodes <br>
+Weather icon credits:
 </footer>
 
     <script src="app.js"></script>

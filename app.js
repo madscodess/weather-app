@@ -2,15 +2,16 @@
 const searchButton = document.querySelector('#searchButton');
 const form = document.querySelector('#searchInput');
 
-let weatherContainer = document.querySelector('div.container-fluid');
+let weatherContainer = document.querySelector('div#current-temperature-text');
+let highlights = document.querySelector('div#highlights');
 let current = document.querySelector('#currentTemperature');
 let humidity = document.querySelector('p#humidity');
 let maxTempDiv = document.querySelector('p#max-temperature');
 let minTempDiv = document.querySelector('p#min-temperature');
 let sunrise = document.querySelector('#sunrise');
 let sunset = document.querySelector('#sunset');
-let images = document.querySelector('.card-img-top');
-
+const errorState = document.querySelector('#error-state');
+let image = document.querySelector('div#current-temperature-text img');
 
 //const highlightsDiv = document.getElementById('highlights');
 
@@ -81,6 +82,8 @@ searchButton.addEventListener("click", function(e){
   
   //display containers
   weatherContainer.style.display = "flex";
+  highlights.style.display = "flex";
+ 
 
 //get data using axios request 
 const getCityWeather = async (errors) => {
@@ -88,33 +91,36 @@ const getCityWeather = async (errors) => {
         const response = await axios.get(`${apiUrl}`);
         const cityData = response.data;
         console.log(`GET: Here's the list of weather in ${inputCity}`, cityData);
-        
+       
+        //error code
+        if (cityData === '404') {
+            console.log("error code");
+            errorState.style.display = 'flex';
+            errorState.classList.add('fadeIn');
+            return;
+        }
+
+        //update image
+        let icon = cityData.weather[0].icon;
+        image.src = `/icons/${icon}.png`;
 
         //current temperature
         //change numbers to two digits 
         let currentTemp = String(cityData.main.temp).substring(0, 2);
-        console.log(currentTemp);
         current.innerText = `${currentTemp}°C`;
-
-        images.appendChild = cityData.weather[0].icon;
-        console.log(`imagesicon${images}`);
-        
 
         //humidity percentage 
         humidity.innerText = `${(cityData.main.humidity)}%`; 
-        console.log(humidity);
 
 
         //max temperature
         //change numbers to one digit 
         let maxTemp = String(cityData.main.temp_max).substring(0, 2);
-        console.log(Number(maxTemp));
         maxTempDiv.innerText = `${maxTemp}°C`;
        
         //Min temperature
         //change numbers to one digit 
         let minTemp = String(cityData.main.temp_min).substring(0, 2);
-        console.log(Number(minTemp));
         minTempDiv.innerText = `${minTemp}°C`;
 
     }
@@ -127,33 +133,4 @@ const getCityWeather = async (errors) => {
 return getCityWeather();
 
 });
-
-
-//inputCity("Suprunivka");
-
-// //5 day forecast
-// let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&units=metric&appid=${apiKey}`;
-// console.log(apiForecast.list);
-
-// window.addEventListener("load", function(e){
-//     e.preventDefault()
-//   const getManchesterForecast = async (errors) => {
-//       try {
-//           const response = await axios.get(`${apiForecast}`);
-//           const forecastData = response.data;
-          
-//           const day1 = response.data.list[0];
-//           const day2 = response.data.list[1];
-//           console.log(forecastData);
-//           console.log(`GET: Here's the 5 day forecast in ${inputCity}`, forecastData);
-//           console.log(`GET: Here's the 1st day forecast in ${inputCity}`, day1);
-//           console.log(`GET: Here's the 1st day forecast in ${inputCity}`, day2);
-
-//       }
-//       catch (e) {
-//               console.log(errors);
-//       }
-//   }
-//       return getManchesterForecast();
-// });
 

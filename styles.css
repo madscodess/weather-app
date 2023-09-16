@@ -1,185 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    
+}
 
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+    background-color: rgb(9, 39, 66) !important; 
+}
 
 main {
+    margin-top: 2rem;
+    background-color: whitesmoke;
+    border-radius: 2.5rem;
+    padding: 1.5rem;
     display: flex;
+    align-items: center;
+    justify-content: center; 
     flex-direction: column;
-    justify-content: center;
-
+    height: 800px;
 }
 
 form {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    }
+    justify-content: center;
+    background-color: whitesmoke;
+}
 
-    #searchInput {
-        border-radius: 0.5rem;
-    }
 
-    #searchButton {
-        margin-left: 1rem;
+#current-temperature-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+}
 
-    }
+#current-temperature-text img {
+    width: 150px;
+    height: 150px;
+   
+}
 
 #highlights{
-    padding: 0,.5rem;
     display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
-    margin-top: 3rem;
-    border-radius: 2rem;
-}
-
-h1 {
     text-align: center;
-}
-
-h2 {
-    text-align: center;
-}
-
-p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-fluid{
     display: none;
-    flex-direction: column;
+    overflow: scroll;
 }
+
+i{
+    padding: 1rem;
+}
+
+#error-state{
+    text-align: center;
+    display: none;
+}
+
+
 
 footer{
-    padding: 2rem 0rem 1rem 0rem;
-    text-align: center;
-}
-
-.card-group{
-    padding: 1rem;
-    background-color: whitesmoke;
-}
-
-.card-body  {
-    border-radius: 3rem;
-}
-
-.card-img-top{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: yellow;
-}
-
-#current-temperature-text {
-    padding: 0.5rem;
-    background-color: whitesmoke;
-    border-radius: 1.5rem;
-}
-
-
-/* for tablet & desktop  */
-@media (min-width: 768px) {
-    body {
-        padding: 1.5rem;
-        background-color: whitesmoke;
-    }
-
-    h2{
-        display: flex;
-        justify-content: center;
-    }
-
-    main {
-        display: flex;
-
-        justify-content: center;
-
-    }
-
-    #highlights {
-        border-radius: 2rem;
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: row;
-        background-color: whitesmoke;
-    }
-
-    .container-fluid{
-        display: none;
-        /* display: flex; */
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem;
-        background-color: white;
-    }
-
-/* left current temperature  */
-    #current-temperature-text{
-        width: 20rem;
-        height: 25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        background-color: whitesmoke;
-        border-radius: 2rem;
-        margin: 3rem;
-    }
-    
-    #today-highlight-text{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        background-color: whitesmoke;
-        border-radius: 2rem;
-    }
-
-    #today-highlight-text p {
-        margin-top: 1rem;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    /* cards style */
-
-    .card {
-        margin: 0.8rem;
-    }
-
-    .card-group{
-        padding: 1rem;
-        display: flex;
-        justify-content: end;
-        text-align: center;
-        background-color: whitesmoke;
-        padding-bottom: 3rem;
-        border-radius: 2rem;
-    }
-
-    .card-img-top{
-        background-color: white;
-    }
-
-    .card-body {
-        display: flex;
-        background-color: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem;
-        text-align: center;
-        border-radius: 1.5rem;
-    }
-
+    color: white;
 }
