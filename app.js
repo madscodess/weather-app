@@ -71,7 +71,6 @@ function displayWeather(){
 
 }
 catch (e) {
-    console.log(cityData.cod);
         console.log(errors);
 
 } }
