@@ -41,12 +41,13 @@ form {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     display: none;
 }
 
 #current-temperature-text img {
-    width: 150px;
     height: 150px;
+    width: 150px;
 }
 
 #highlights{
@@ -84,3 +85,28 @@ footer a {
     color: white;
     text-decoration: none;
 }
+
+  .dark-mode {
+    background-color: #152028;
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (min-width: 700px) {
+    main {
+      width: 800px;
+    }
+
+    #highlights {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+      }
+
+  }

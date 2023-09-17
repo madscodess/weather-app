@@ -17,11 +17,17 @@
    
     <!-- Font Awesome Icons Link -->
    <script src="https://kit.fontawesome.com/6752cb25eb.js" crossorigin="anonymous"></script>
-    <title>Weather App - Vanilla JS</title>
+   
+   <title>Weather App - Vanilla JS</title>
 </head>
 <body>
     
 <main>
+  <button id="lightModeButton" class="btn btn-outline-secondary" type="button">LIGHT</button>
+  <button id="dakrModeButton" class="btn btn-outline-secondary" type="button">DARK</button>
+
+<p id="DarkModetext"> text</p>
+
   <h1>Weather Search</h1>
     <!-- Search  -->
     <form id="search"> 
@@ -42,7 +48,7 @@
 <!-- Weather right now  -->
 <div id="current-temperature-text">
    <!-- Weather right now  -->
-    <p id="current-text">Temperature in : </p>
+    <p id="current-text">Temperature in city: </p>
     <img src="" alt="weather icon">
     <h2 id="currentTemperature"> </h2>
 </div>

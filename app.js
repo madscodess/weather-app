@@ -1,3 +1,7 @@
+const darkModeButton = document.querySelector('#darkModeButton');
+const lightModeButton = document.querySelector('#lightModeButton');
+const DarkModeText = document.querySelector('#DarkModetext');
+
 
 const searchButton = document.querySelector('#searchButton');
 const form = document.querySelector('#searchInput');
@@ -12,6 +16,7 @@ let sunrise = document.querySelector('#sunrise');
 let sunset = document.querySelector('#sunset');
 const errorState = document.querySelector('#error-state');
 let image = document.querySelector('div#current-temperature-text img');
+let currentText = document.querySelector('p#current-text');
 
 //to update via the user input
 searchButton.addEventListener("click", function(e){
@@ -36,6 +41,9 @@ const getCityWeather = async (errors) => {
 
 
 function displayWeather(){
+
+    console.log(currentText);
+        currentText.innerText = `Temperature in ${inputCity}:`;
         //update image
         let icon = cityData.weather[0].icon;
         image.src = `/icons/${icon}.png`;
@@ -73,3 +81,27 @@ catch (e) {
 getCityWeather();
 
 });
+
+// lightModeButton.addEventListener("click", function(e){
+//     e.preventDefault()
+// function lightMode() {
+//     let element = document.body;
+//     let content = document.getElementById("DarkModeText");
+//     element.className = "light-mode";
+//     content.innerText = "Dark Mode is OFF";
+// }
+// lightMode();
+// });
+
+// darkModeButton.addEventListener("click", function(e){
+//     e.preventDefault()
+// function darkMode() {
+//     let element = document.body;
+//     let content = document.getElementById("DarkModeText");
+//     element.className = "dark-mode";
+//     content.innerText = "Dark Mode is ON";
+// }
+// darkMode();
+// });
+
+
