@@ -87,8 +87,8 @@ footer a {
 }
 
   .dark-mode {
-    background-color: #152028;
-    color: white;
+    background-color: #152028 !important;
+    color: white !important; 
 }
 
 .light-mode {
@@ -107,6 +107,7 @@ footer a {
         align-items: center;
         justify-content: center;
         width: 600px; 
+        display: none;
       }
 
   }

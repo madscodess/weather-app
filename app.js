@@ -1,10 +1,10 @@
 const darkModeButton = document.querySelector('#darkModeButton');
 const lightModeButton = document.querySelector('#lightModeButton');
-const DarkModeText = document.querySelector('#DarkModetext');
 
 
 const searchButton = document.querySelector('#searchButton');
-const form = document.querySelector('#searchInput');
+const input = document.querySelector('#searchInput');
+const form =  document.querySelector('#search');
 
 let weatherContainer = document.querySelector('div#current-temperature-text');
 let highlights = document.querySelector('div#highlights');
@@ -17,11 +17,29 @@ let sunset = document.querySelector('#sunset');
 const errorState = document.querySelector('#error-state');
 let image = document.querySelector('div#current-temperature-text img');
 let currentText = document.querySelector('p#current-text');
+let main = document.querySelector('main');
+
+
+function darkMode() {
+        let element = document.body;
+        element.className = "dark-mode";
+
+        main.className = "dark-mode";
+
+        highlights.className = "dark-mode";
+        weatherContainer.className = "dark-mode";
+        form.className = "dark-mode";
+}
+
+darkModeButton.addEventListener('click', function(e){
+    e.preventDefault();
+    darkMode();
+});
 
 //to update via the user input
 searchButton.addEventListener("click", function(e){
   e.preventDefault()
-  const inputCity = form.value;
+  const inputCity = input.value;
 
   let apiKey = "bb9c326b337a705c684adf14dac0abf6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=metric&appid=${apiKey}`;
@@ -81,6 +99,8 @@ catch (e) {
 getCityWeather();
 
 });
+
+
 
 // lightModeButton.addEventListener("click", function(e){
 //     e.preventDefault()
