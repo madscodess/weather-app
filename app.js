@@ -5,6 +5,7 @@ const lightModeButton = document.querySelector('#lightModeButton');
 const searchButton = document.querySelector('#searchButton');
 const input = document.querySelector('#searchInput');
 const form =  document.querySelector('#search');
+const searchForm =  document.querySelector('div#input-group mb-3');
 
 let weatherContainer = document.querySelector('div#current-temperature-text');
 let highlights = document.querySelector('div#highlights');
@@ -18,17 +19,19 @@ const errorState = document.querySelector('#error-state');
 let image = document.querySelector('div#current-temperature-text img');
 let currentText = document.querySelector('p#current-text');
 let main = document.querySelector('main');
+let todaysHighlightBoxes = document.querySelector('div.card-group');
 
 
 function darkMode() {
         let element = document.body;
         element.className = "dark-mode";
-
         main.className = "dark-mode";
-
         highlights.className = "dark-mode";
+        todaysHighlightBoxes.className = "dark-mode";
         weatherContainer.className = "dark-mode";
         form.className = "dark-mode";
+        searchForm.className = "dark-mode";
+        input.className = "dark-mode";
 }
 
 darkModeButton.addEventListener('click', function(e){

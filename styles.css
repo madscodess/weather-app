@@ -99,6 +99,7 @@ footer a {
 @media only screen and (min-width: 700px) {
     main {
       width: 800px;
+      height: 700px;
     }
 
     #highlights {
