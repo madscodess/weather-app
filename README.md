@@ -4,11 +4,11 @@ Web application that retrieved and displays data from an API. It is built using 
 [Project live preview is here](https://madscodess.github.io/weather-app/)
 # Features
 The following features are available in this application:
-- User can search for a city to display weather conditions as below:
---- Current temperature with image to display the current weather conditions
---- Minimum and Maximum Temperature 
---- Humidity
---- Error message and image displayed when user inputs a city that does not exist or is not recognised by the API
+- Users can search for a city to display weather conditions as below:
+- Current temperature with image to display the current weather conditions
+- Minimum and Maximum Temperature 
+- Humidity
+- Error message and image displayed when user inputs a city that does not exist or is not recognised by the API
 
 # Technologies Used
 This application was built using the following technologies:
