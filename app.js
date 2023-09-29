@@ -22,22 +22,6 @@ let main = document.querySelector('main');
 let todaysHighlightBoxes = document.querySelector('div.card-group');
 
 
-function darkMode() {
-        let element = document.body;
-        element.className = "dark-mode";
-        main.className = "dark-mode";
-        highlights.className = "dark-mode";
-        todaysHighlightBoxes.className = "dark-mode";
-        weatherContainer.className = "dark-mode";
-        form.className = "dark-mode";
-        searchForm.className = "dark-mode";
-        input.className = "dark-mode";
-}
-
-darkModeButton.addEventListener('click', function(e){
-    e.preventDefault();
-    darkMode();
-});
 
 //to update via the user input
 searchButton.addEventListener("click", function(e){
@@ -104,27 +88,21 @@ getCityWeather();
 });
 
 
-
-// lightModeButton.addEventListener("click", function(e){
-//     e.preventDefault()
-// function lightMode() {
-//     let element = document.body;
-//     let content = document.getElementById("DarkModeText");
-//     element.className = "light-mode";
-//     content.innerText = "Dark Mode is OFF";
-// }
-// lightMode();
-// });
-
-// darkModeButton.addEventListener("click", function(e){
-//     e.preventDefault()
+//dark mode 
 // function darkMode() {
-//     let element = document.body;
-//     let content = document.getElementById("DarkModeText");
-//     element.className = "dark-mode";
-//     content.innerText = "Dark Mode is ON";
+//         let element = document.body;
+//         element.className = "dark-mode";
+//         main.className = "dark-mode";
+//         highlights.className = "dark-mode";
+//         todaysHighlightBoxes.className = "dark-mode";
+//         weatherContainer.className = "dark-mode";
+//         form.className = "dark-mode";
+//         searchForm.className = "dark-mode";
+//         input.className = "dark-mode";
 // }
-// darkMode();
-// });
 
+// darkModeButton.addEventListener('click', function(e){
+//     e.preventDefault();
+//     darkMode();
+// });
 
