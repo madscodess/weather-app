@@ -20,5 +20,5 @@ This application was built using the following technologies:
 - Add dark & light mode
 
 # Credits
-API used was [sourced from here] (https://openweathermap.org/api)
-Weather Icons were [sourced from here] (https://github.com/manifestinteractive/weather-underground-icons)
+API used was [sourced from here](https://openweathermap.org/api)
+Weather Icons were [sourced from here](https://github.com/manifestinteractive/weather-underground-icons)
