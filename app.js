@@ -61,7 +61,7 @@ function displayWeather(){
         //humidity percentage 
         humidity.innerText = `${(cityData.main.humidity)}%`; 
 
-
+ 
         //max temperature
         //change numbers to one digit 
         let maxTemp = String(cityData.main.temp_max).substring(0, 2);
