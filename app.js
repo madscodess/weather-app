@@ -51,7 +51,7 @@ function displayWeather(){
         currentText.innerText = `Temperature in ${inputCity}:`;
         //update image
         let icon = cityData.weather[0].icon;
-        image.src = `./icons/${icon}.png`;
+        image.src = `/docs/assets/icons/${icon}.png`
 
         //current temperature
         //change numbers to two digits 
