@@ -1,5 +1,5 @@
-# Weather App
-Web application that retrieved and displays data from an API. It is built using HTML, CSS, Bootstrap and JavaScript.
+# Weather App - Vanilla JS
+Web application that retrieves and displays data from an API. It is built using HTML, CSS, Bootstrap and JavaScript.
 
 [Project live preview is here](https://madscodess.github.io/weather-app/)
 # Features
